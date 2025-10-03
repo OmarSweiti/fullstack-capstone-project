@@ -25,20 +25,13 @@ router.get('/', async (req, res, next) => {
         if (req.query.category) {
             // {{insert code here}}
             query.category = req.query.category;
-            query.condition = req.query.condition;
-            query.age_years = { $lte: parseInt(req.query.age_years) };
         }
         if (req.query.condition) {
             // {{insert code here}} 
-            query.category = req.query.category;
-            query.condition = req.query.condition;
-            query.age_years = { $lte: parseInt(req.query.age_years) };
             query.condition = req.query.condition;
         }
         if (req.query.age_years) {
             // {{insert code here}}
-            query.category = req.query.category;
-            query.condition = req.query.condition;
             query.age_years = { $lte: parseInt(req.query.age_years) };
         }
 
