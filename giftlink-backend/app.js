@@ -46,6 +46,8 @@ app.use('/api/gifts', giftRoutes);
 //{{insert code here}}
 app.use('/api/search', searchRoutes);
 
+app.use('/api/search/', searchRoutes);
+
 
 // Global Error Handler
 app.use((err, req, res, next) => {
@@ -60,3 +62,4 @@ app.get("/",(req,res)=>{
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
+
