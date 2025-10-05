@@ -1,12 +1,10 @@
 /* jshint esversion: 8 */
 require('dotenv').config();
-const MongoClient = require('mongodb').MongoClient;
+const { connectToDatabase, closeConnection } = require('../../models/db.new');
 const fs = require('fs');
 
 // MongoDB connection URL with authentication options
-let url = `${process.env.MONGO_URL}`;
 let filename = `${__dirname}/gifts.json`;
-const dbName = 'giftdb';
 const collectionName = 'gifts';
 
 // notice you have to load the array of gifts into the data object
@@ -14,15 +12,10 @@ const data = JSON.parse(fs.readFileSync(filename, 'utf8')).docs;
 
 // connect to database and insert data into the collection
 async function loadData() {
-    const client = new MongoClient(url);
-
+    let db;
     try {
-        // Connect to the MongoDB client
-        await client.connect();
+        db = await connectToDatabase();
         console.log("Connected successfully to server");
-
-        // database will be created if it does not exist
-        const db = client.db(dbName);
 
         // collection will be created if it does not exist
         const collection = db.collection(collectionName);
@@ -40,7 +33,9 @@ async function loadData() {
         console.error(err);
     } finally {
         // Close the connection
-        await client.close();
+        if (db) {
+            await closeConnection();
+        }
     }
 }
 

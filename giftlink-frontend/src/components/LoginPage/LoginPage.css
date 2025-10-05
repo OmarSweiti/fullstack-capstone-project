@@ -1,112 +1,190 @@
-    .search-bar {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 1rem;
-    }
+/* Auth Container Styles */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 1rem;
+}
 
-    .search-bar .form-control {
-        width: 75%; /* Adjust based on your design preference */
-        margin-right: 1rem;
-    }
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .search-bar .btn {
-        width: 20%; /* Adjust based on your design preference */
-    }
+.auth-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
 
-    .card {
-        /* Use similar styles as in MainPage.css */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        border-radius: 10px;
-    }
+.auth-header {
+  background-color: #4361ee;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
 
-    .card-body {
-        padding: 1rem;
-    }
+.auth-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
 
-    .card-footer {
-        text-align: right;
-        padding: 0.5rem 1rem;
-        border-top: 1px solid #ddd;
-    }
+.auth-header p {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin: 0;
+}
 
-    .card-title {
-        font-size: 1.2rem;
-        color: #0056b3;
-    }
+.auth-body {
+  padding: 2rem;
+}
 
-    .card-text {
-        color: #333;
-        margin-bottom: 0.5rem;
-    }
+.auth-footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
 
-    .btn-info {
-        color: #fff;
-        background-color: #17a2b8;
-        border-color: #17a2b8;
-    }
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
 
-    .btn-info:hover {
-        background-color: #138496;
-        border-color: #117a8b;
-    }
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #333333;
+}
 
-    .fas.fa-arrow-right {
-        margin-left: 5px;
-    }
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
 
-    .card-img-top {
-        width: 100%; /* Full width */
-        height: 180px; /* Fixed height */
-        object-fit: cover; /* Cover the entire area without stretching */
-    }
+.form-control:focus {
+  border-color: #4361ee;
+  box-shadow: 0 0 0 0.2rem rgba(67, 97, 238, 0.25);
+  outline: none;
+}
 
-    .card {
-        transition: box-shadow 0.3s ease-in-out;
-    }
+.form-check {
+  display: flex;
+  align-items: center;
+}
 
-    .card:hover {
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
+.form-check-input {
+  margin-right: 0.5rem;
+}
 
-    .card-body {
-        padding: 1rem;
-    }
+.form-check-label {
+  color: #333333;
+  cursor: pointer;
+}
 
-    .card-footer {
-        text-align: center;
-        padding: 1rem;
-        border-top: none;
-    }
+/* Button Styles */
+.btn {
+  display: inline-block;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
 
-    .card-title {
-        font-size: 1.2rem;
-        color: #0056b3;
-        margin-bottom: 0.5rem;
-    }
+.btn-primary {
+  background-color: #4361ee;
+  color: white;
+  border-color: #4361ee;
+}
 
-    .card-text {
-        color: #333;
-    }
+.btn-primary:hover {
+  background-color: #3f37c9;
+  border-color: #3f37c9;
+  color: white;
+}
 
-    .btn-primary {
-        background-color: #009688; /* A shade of teal for a modern look */
-        border: none;
-    }
+.btn-outline-primary {
+  background-color: transparent;
+  color: #4361ee;
+  border-color: #4361ee;
+}
 
-    .btn-primary:hover {
-        background-color: #00796b; /* A darker shade of teal for hover state */
-    }
+.btn-outline-primary:hover {
+  background-color: rgba(67, 97, 238, 0.1);
+  border-color: #4361ee;
+  color: #4361ee;
+}
 
-    /* Responsive design for smaller screens */
-    @media (max-width: 768px) {
-        .search-bar .form-control,
-        .search-bar .btn {
-            width: 100%; /* Full width for small screens */
-            margin-right: 0;
-            margin-bottom: 0.5rem;
-        }
+/* Alert Styles */
+.alert {
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
 
-        .search-bar .btn {
-            width: auto; /* Auto width for button to fit content */
-        }
-    }
+.alert-danger {
+  background-color: rgba(214, 40, 40, 0.1);
+  color: #d62828;
+  border: 1px solid rgba(214, 40, 40, 0.2);
+}
+
+/* Link Styles */
+.text-primary {
+  color: #4361ee;
+  font-weight: 500;
+}
+
+.text-primary:hover {
+  color: #3f37c9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 1rem;
+  }
+  
+  .auth-header {
+    padding: 1.5rem;
+  }
+  
+  .auth-header h2 {
+    font-size: 1.5rem;
+  }
+  
+  .auth-body {
+    padding: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .auth-card {
+    border-radius: 8px;
+  }
+}

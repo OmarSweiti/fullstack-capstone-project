@@ -98,38 +98,57 @@ const handleSubmit = async (e) => {
 };
 
 return (
-<div className="profile-container">
-  {editMode ? (
-<form onSubmit={handleSubmit}>
-<label>
-  Email
-  <input
-    type="email"
-    name="email"
-    value={userDetails.email}
-    disabled // Disable the email field
-  />
-</label>
-<label>
-   Name
-   <input
-     type="text"
-     name="name"
-     value={updatedDetails.name}
-     onChange={handleInputChange}
-   />
-</label>
-
-<button type="submit">Save</button>
-</form>
-) : (
-<div className="profile-details">
-<h1>Hi, {userDetails.name}</h1>
-<p> <b>Email:</b> {userDetails.email}</p>
-<button onClick={handleEdit}>Edit</button>
-<span style={{color:'green',height:'.5cm',display:'block',fontStyle:'italic',fontSize:'12px'}}>{changed}</span>
-</div>
-)}
+<div className="container">
+  <div className="card profile-container">
+    {editMode ? (
+    <form onSubmit={handleSubmit}>
+    <div className="card-header">
+      <h2 className="card-title">Edit Profile</h2>
+    </div>
+    <div className="card-body">
+      <div className="form-group">
+        <label className="form-label" htmlFor="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          className="form-control"
+          name="email"
+          value={userDetails.email}
+          disabled // Disable the email field
+        />
+      </div>
+      <div className="form-group">
+        <label className="form-label" htmlFor="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          className="form-control"
+          name="name"
+          value={updatedDetails.name}
+          onChange={handleInputChange}
+        />
+      </div>
+    </div>
+    <div className="card-footer">
+      <button type="submit" className="btn btn-primary">Save Changes</button>
+    </div>
+    </form>
+    ) : (
+    <div>
+      <div className="card-header">
+        <h2 className="card-title">Your Profile</h2>
+      </div>
+      <div className="card-body profile-details">
+        <h3 className="card-title">Hi, {userDetails.name}</h3>
+        <p className="card-text"><strong>Email:</strong> {userDetails.email}</p>
+        <button className="btn btn-primary" onClick={handleEdit}>Edit Profile</button>
+        {changed && (
+          <div className="alert alert-success mt-3">{changed}</div>
+        )}
+      </div>
+    </div>
+    )}
+  </div>
 </div>
 );
 };
